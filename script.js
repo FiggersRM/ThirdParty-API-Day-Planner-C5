@@ -9,16 +9,15 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   saveBtn = $('.saveBtn');
-  var savedText = JSON.parse(localStorage.getItem("savedText")) || [];
-  // console.log(savedText);
+  var savedText = [];
   saveBtn.on('click', function () {
     var parentEl = this.parentElement;
     var parentId = parentEl.id;
-    var parentTextArea = parentEl.textarea;
+    var parentTextArea = parentEl.textarea.value;
     console.log(parentTextArea);
     var saveText = {
       id: parentId,
-      text: parentTextArea.value,
+      text: parentTextArea,
     }
     console.log(saveText);
     savedText.push(saveText);

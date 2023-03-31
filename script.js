@@ -9,7 +9,6 @@ $(function () {
     }
     savedText.push(saveText);
     localStorage.setItem("savedText", JSON.stringify(savedText));
-    console.log(savedText);
   })
     containerEl = $('.container-lg');
     for(var i = 0; i < 9; i++) {
@@ -29,11 +28,8 @@ $(function () {
     }
     function getSavedItems () {
       for (var i = 0; i < savedText.length; i++) {
-        console.log(savedText);
         var timeId = savedText[i].id;
         var timeText = savedText[i].text;
-        console.log(timeId);
-        console.log(timeText);
         $("#" + timeId).children(".description").val(timeText);
       }
     }
